@@ -15,7 +15,7 @@ vtx-snd
 #### <span id='modalProps'>modalProps</span> 参考antd的Modal参数配置
 
 | **参数**         | **说明**                                                    | **类型**      | **默认值** |
-| ---------------- | -----------------------------------------------------------|   String   |   ''      |
+| ---------------- | -----------------------------------------------------------|---------------| --------------- |
 | title           |                                                             |   Boolean  |   false     |
 | visible         |                                                             |   Function |   null      |
 | onCancel        |                                                             |   Boolean  |   false     |
@@ -157,7 +157,7 @@ vtx-snd
 ```
 ---
 
-#### <span id='onchange'>wrappedComponentRef</span>配置项 
+#### <span id='onchange'>wrappedComponentRef</span>
 
 
 ```javascript
