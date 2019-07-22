@@ -16,9 +16,9 @@ vtx-snd
 
 | **参数**         | **说明**                                                    | **类型**      | **默认值** |
 | ---------------- | -----------------------------------------------------------|---------------| --------------- |
-| title           |                                                             |   Boolean  |   false     |
-| visible         |                                                             |   Function |   null      |
-| onCancel        |                                                             |   Boolean  |   false     |
+| title           |                                                             |   String  |   ''     |
+| visible         |                                                             |   Boolean |   false      |
+| onCancel        |                                                             |   Function  |   null     |
 | maskClosable    |                                                             | Boolean    |   false     |
 | footer          |                                                             |            |   null      |
 
