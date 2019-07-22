@@ -1,0 +1,127 @@
+.ant-btn-delete {
+  margin-left: 16px;
+  background-color: #E60012;
+  color: #FFFFFF;
+  width: 82px;
+  height: 32px;
+  border-color: #ff1a2c;
+  font-size: 14px;
+}
+.ant-btn-delete .anticon:before {
+  display: block;
+  font-family: "vtxiconfont" !important;
+}
+.ant-btn-delete .anticon-delete:before {
+  content: "\e62b";
+}
+.ant-btn-delete:hover,
+.ant-btn-delete:focus {
+  color: #FFFFFF;
+  background-color: #ff1a2c;
+  border-color: #ff1a2c;
+}
+.vtx-ui-btnGroup-normal .ant-btn-plus {
+  width: 82px;
+  margin-left: 16px;
+}
+.ant-btn-plus {
+  background-color: #1890FF;
+  color: #FFFFFF;
+  height: 32px;
+  font-size: 14px;
+  border-color: transparent;
+}
+.ant-btn-plus .anticon:before {
+  display: block;
+  font-family: "vtxiconfont" !important;
+}
+.ant-btn-plus .anticon-plus:before {
+  content: "\e62c";
+}
+.ant-btn-plus:hover,
+.ant-btn-plus:focus {
+  color: #FFFFFF;
+  background-color: #49a9ee;
+  border-color: #49a9ee;
+}
+.ant-btn-more {
+  margin-left: 16px;
+  background-color: #f19149;
+  color: #FFFFFF;
+  width: 82px;
+  height: 32px;
+  font-size: 14px;
+  border-color: #dd945d;
+}
+.ant-btn-more .anticon:before {
+  display: block;
+  font-family: "vtxiconfont" !important;
+}
+.ant-btn-more .anticon-bars:before {
+  content: "\e625";
+}
+.ant-btn-more:hover,
+.ant-btn-more:focus {
+  color: #FFFFFF;
+  background-color: #dd945d;
+  border-color: #dd945d;
+}
+.vtx-ui-btnGroup-titleselectioncontainer .ant-checkbox-wrapper {
+  display: block;
+  margin-left: 0px !important;
+}
+.vtx-ui-btnGroup-titleselectioncontainer .vtx-ui-btnGroup-titleselectioncontainer-title {
+  display: inline-block;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.vtx-ui-btnGroup-titleselectioncontainer .vtx-ui-btnGroup-titleselectioncontainer-title * {
+  display: inline-block;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.vtx-ui-btnGroup-normal {
+  padding: 0 25px 16px 9px;
+}
+.vtx-ui-btnGroup-normal .vtx-ui-btnGroup-extraBtns {
+  text-align: right;
+}
+.vtx-ui-btnGroup-normal .vtx-ui-btnGroup-extraBtns .anticon {
+  margin: 0 2px;
+}
+.vtx-ui-btnGroup-normal .vtx-ui-btnGroup-extraBtns .anticon:before {
+  display: block;
+  font-family: "vtxiconfont" !important;
+}
+.vtx-ui-btnGroup-normal .vtx-ui-btnGroup-extraBtns .anticon-more:before {
+  content: "\e600";
+}
+.vtx-ui-btnGroup-normal .vtx-ui-btnGroup-extraBtns .anticon-export:before {
+  content: "\e61a";
+}
+.vtx-ui-btnGroup-normal .vtx-ui-btnGroup-extraBtns .anticon-caret-down:before {
+  content: "\e630";
+}
+.vtx-ui-btnGroup-normal .vtx-ui-btnGroup-extraBtns .ant-btn {
+  border-color: #ddd;
+  background-color: #F4F4F4;
+  height: 32px;
+  padding: 0 10px;
+}
+.vtx-ui-btnGroup-item {
+  width: 100%;
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+  width: 90px;
+}

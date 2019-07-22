@@ -1,0 +1,28 @@
+.error {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+}
+.error:after {
+  content: attr(data-errorMsg);
+  color: red;
+  display: block;
+  font-size: 10px;
+  line-height: 18px;
+}
+.error * {
+  border-radius: 4px;
+  border-color: red!important;
+}
+.normal {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+}
+.normal:after {
+  content: '.';
+  visibility: hidden;
+  display: block;
+  font-size: 10px;
+  line-height: 18px;
+}

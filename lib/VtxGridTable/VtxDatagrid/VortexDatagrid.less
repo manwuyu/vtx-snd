@@ -1,0 +1,159 @@
+.vtx-ui-grid-data-table-autoheightcontainer {
+    height: 100%;
+    .ant-table-wrapper {
+        height: 100%;
+        transition: all 0.6s;
+        .ant-spin-nested-loading {
+            height: 100%;
+            .ant-spin-container {
+                height: 100%;
+                padding-bottom: 5px;
+                position: relative;
+                .ant-table {
+                    // height: 100%;
+                    background-color:#FFF;
+                    .ant-table-content{
+                        margin: 0 21px;
+                    }
+                    .ant-table-thead > tr > th{
+                        background: #FAFAFA;
+                    }
+                }
+                .ant-table-pagination {
+                    // position: absolute;
+                    // bottom: 0;
+                    // right: 20px;
+                            font-size: 12px;
+                        background: #FFF;
+                        width: 100%;
+                        padding: 16px 21px;
+                        text-align: right;
+                        margin: 0;
+                    .ant-pagination-total-text{
+                        float: left;
+                    }
+                    .ant-pagination-item-active{
+                        background-color: #1890ff;
+                        border-color: #1890ff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vtx-ui-grid-data-table-ct {
+    height: 100%;
+    .ant-table-wrapper {
+        height: 100%;
+        transition: all 0.6s;
+        .ant-spin-nested-loading {
+            height: 100%;
+            .ant-spin-container {
+                height: 100%;
+                padding-bottom: 5px;
+                position: relative;
+                .ant-table {
+                    // height: 100%;
+                    background-color:#FFF;
+                    .ant-table-content{
+                        margin: 0 21px;
+                    }
+                    .ant-table-thead > tr > th{
+                        background: #FAFAFA;
+                        border-bottom: 1px solid #e9e9e9;
+                    }
+                }
+                .ant-table-pagination {
+                    // position: absolute;
+                    // bottom: 0;
+                    // right: 20px;
+                            font-size: 12px;
+                        background: #FFF;
+                        width: 100%;
+                        padding: 16px 21px;
+                        text-align: right;
+                        margin: 0;
+                    .ant-pagination-total-text{
+                        float: left;
+                    }
+                    .ant-pagination-item-active{
+                        background-color: #1890ff;
+                        border-color: #1890ff;
+                    }
+                    .ant-pagination-options{
+                        .ant-select-dropdown-menu-item{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vtx-ui-grid-data-table-ct {
+    position: relative;
+    margin-top: 16px;
+    .ant-table-scroll {
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+    }
+    .ant-table-header,
+    .ant-table-body {
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background-color: hsla(0, 0%, 80%, 0.08);
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+            background-color: rgba(180, 180, 180, 0.5);
+        }
+    }
+    .ant-table-header {
+        padding-bottom: 10px !important;
+        overflow-x: scroll !important;
+        margin-bottom: -17px !important;
+        th {
+            white-space: normal;
+        }
+    }
+}
+
+.vtx-ui-grid-data-table-nowrapoverflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.vtx-ui-grid-data-table-titleselectioncontainer {
+    // position: absolute;
+    // left: 20px;
+    // bottom: 20px;
+    // border-radius: 3px;
+    // box-shadow: 0 0 1px 1px grey;
+    // padding: 8px;
+    // background: #f7f7f7;
+    .ant-checkbox-wrapper {
+        display: block;
+        margin-left: 0px !important;
+    }
+}
+
+.vtx-ui-grid-data-table-columnbt {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    &:hover {
+        color: #1890FF;
+        transform: scale(1.2);
+    }
+}
+
+.vtx-ui-grid-data-table-indexcolumn {
+    text-align: center !important;
+}

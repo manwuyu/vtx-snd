@@ -1,0 +1,56 @@
+.vtx-ui-grid-grid-lists {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  line-height: 28px;
+  height: 38px;
+}
+.vtx-ui-grid-grid-lists .vtx-ui-grid-grid-colon {
+  width: 15px;
+  position: absolute;
+  left: 0px;
+}
+.vtx-ui-grid-grid-lists .vtx-ui-grid-grid-list {
+  width: 100%;
+}
+.vtx-ui-grid-grid-normalBox {
+  padding: 0  0 16px 0;
+}
+.vtx-ui-grid-grid-normalBox .vtx-ui-grid-grid-normal {
+  padding: 0 25px 0 0px;
+  transition: all 0.6s;
+  overflow: hidden;
+}
+.vtx-ui-grid-grid-normalBox .vtx-ui-grid-grid-normal .vtx-ui-grid-grid-hidden {
+  opacity: 0;
+  display: none;
+}
+.vtx-ui-grid-grid-normalBox .vtx-ui-grid-grid-normal .vtx-ui-grid-grid-moreBtn {
+  color: #1890FF;
+  cursor: pointer;
+  text-align: right;
+  display: block;
+  font-size: 14px;
+}
+.vtx-ui-grid-grid-normalBox .vtx-ui-grid-grid-normal .vtx-ui-grid-grid-moreBtn .vtx-ui-grid-grid-arrow {
+  position: relative;
+  top: 2px;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+.vtx-ui-grid-grid-normalBox .vtx-ui-grid-grid-normal .vtx-ui-grid-grid-moreBtn .vtx-ui-grid-grid-arrow.vtx-ui-grid-grid-arrow-on {
+  transform: rotate(-180deg);
+}
+.vtx-ui-grid-grid-normalBox .vtx-ui-grid-grid-normal .ant-btn {
+  font-size: 14px;
+  height: 32px;
+  min-width: 64px;
+}
+.vtx-ui-grid-grid-normalBox .vtx-ui-grid-grid-normal .vtx-ui-grid-grid-action {
+  transition: all 0.6s;
+  position: absolute;
+  right: 0;
+}
