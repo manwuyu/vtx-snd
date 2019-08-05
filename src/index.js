@@ -17,3 +17,4 @@ export {VtxZtreeSelect} from './VtxZtreeSelect';
 export {VtxRpsFrame} from './VtxRpsFrame';
 export {VtxGridTable} from './VtxGridTable';
 export {VtxItemModal} from './VtxItemModal';
+export {DYNAMIC} from './VtxDynamic';

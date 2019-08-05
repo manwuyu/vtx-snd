@@ -132,17 +132,16 @@ class VtxGrid extends React.Component {
                         onClick={() =>
                             confirm({
                                 className: 'delModal',
-                                title: '确定删除选中的数据吗?',
+                                title: item.selecteRowKeys.length>0?'确定删除选中的'+item.selecteRowKeys.length+'条数据吗？': '当前没有选中的行可以删除！',
                                 okText: '确定',
                                 okType: 'primary',
                                 cancelText: '取消',
-                                onOk() {
-                                    console.log('OK');
-                                },
-                                onCancel() {
-                                    console.log('Cancel');
-                                },
-                                ...item.modal
+                                
+                                ...item.modal,
+                                onOk: item.modal.onOk&&item.selecteRowKeys.length>0?item.modal.onOk:()=>{},
+                                onCancel:item.modal.onCancel?item.modal.onCancel:()=>{
+
+                                }
                             })
                         }
                         className={item.className}
@@ -197,6 +196,7 @@ class VtxGrid extends React.Component {
         return btns;
     };
     render() {
+        let { extraButtons } = this.props;
         let t = this;
         return (
             <div
@@ -236,16 +236,19 @@ class VtxGrid extends React.Component {
                                         // trigger="click"
                                     >
                                         <Button>
-                                            <Icon type="more" style={{ fontSize: '5px' }} />
-                                            <Icon type="caret-down" style={{ fontSize: '5px' }} />
+                                            <Icon type="more" style={{ fontSize: '10px' }} />
+                                            <Icon type="caret-down" style={{ fontSize: '10px' }} />
                                         </Button>
                                     </Popover>
+                                    {extraButtons instanceof Array && extraButtons.length>0?
                                     <Dropdown overlay={this.renderextraButtons()}>
                                         <Button >
-                                            <Icon type="export" style={{ fontSize: '5px' }} />
-                                            <Icon type="caret-down" style={{ fontSize: '5px' }} />
+                                            <Icon type="export" style={{ fontSize: '10px' }} />
+                                            <Icon type="caret-down" style={{ fontSize: '10px' }} />
                                         </Button>
                                     </Dropdown>
+                                    : null
+                                    }
                                     </ButtonGroup>
                                 </div>
                             </VtxRow>

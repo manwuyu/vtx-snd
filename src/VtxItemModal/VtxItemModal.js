@@ -26,6 +26,9 @@ import 'antd/lib/col/style/css';
 import TreeSelect from 'antd/lib/tree-select';
 import 'antd/lib/tree-select/style/css';
 
+import Select from 'antd/lib/select';
+import 'antd/lib/select/style/css';
+
 import InputNumber from 'antd/lib/input-number';
 import 'antd/lib/input-number/style/css';
 
@@ -35,45 +38,47 @@ const TextArea = Input.TextArea;
 const Option = Select.Option;
 
 function getContentJsx (item, contentProps, setFieldsValue) {
+
     switch (item.contType.toLowerCase()) {
         case 'input':
             let InputProps ={
                 style:{width: '100%'},
+                onBlur:(e) => {},
                 onChange:()=>{},
-                ...item
+                ...item.options
             }
             return (
                 <Input
-                    placeholder={InputProps.placeholder}
-                    onBlur={(e) => {}}
-                    maxLength={InputProps.maxLength}
-                    style={InputProps.style}
-                    onChange={InputProps.onChange}
+                    {...InputProps}
                 />
             )
             break;
         case 'select':
             let SelectProps ={
+                showSearch:true,
                 style:{width: '100%'},
-                selectOptionValue: 'id',
-                selectOptionName: 'name',
                 onChange:()=>{},
                 onSelect:()=>{},
+                ...item.options
+            }
+            let SelectOtherProps = {
+                selectOptionValue: 'id',
+                selectOptionName: 'name',
                 ...item
+            }
+            let SelectOptionProps = {
+                ...item.optionOptions?item.optionOptions:{}
             }
             return (
                 <Select
-                    showSearch
-                    placeholder={SelectProps.placeholder}
-                    style={SelectProps.style}
+                    {...SelectProps}
                     onSelect={(value,option )=>{
                         SelectProps.onSelect(value,option, setFieldsValue)
                     }}
-                    onChange={SelectProps.onChange}
                 >
-                {contentProps[SelectProps.selectDataKey] instanceof Array && contentProps[SelectProps.selectDataKey].map((sitem, index)=>{
+                {contentProps[SelectOtherProps.selectDataKey] instanceof Array && contentProps[SelectOtherProps.selectDataKey].map((sitem, index)=>{
                     return (
-                        <Option value={`${sitem[SelectProps.selectOptionValue]}`} key={index}>{sitem[SelectProps.selectOptionName]}</Option>
+                        <Option value={`${sitem[SelectOtherProps.selectOptionValue]}`} key={index} {...SelectOptionProps}>{sitem[SelectOtherProps.selectOptionName]}</Option>
                     )
                 })}
                 </Select>
@@ -83,15 +88,11 @@ function getContentJsx (item, contentProps, setFieldsValue) {
             let InputNumberProps ={
                 style:{width: '100%'},
                 onChange:()=>{},
-                ...item
+                ...item.options
             }
             return (
                 <InputNumber
-                    placeholder={InputNumberProps.placeholder}
-                    maxLength={InputNumberProps.maxLength}
-                    style={InputNumberProps.style}
-                    onChange={InputNumberProps.onChange}
-                    min={InputNumberProps.min}
+                    {...InputNumberProps}
                 />
             )
             break;
@@ -104,33 +105,27 @@ function getContentJsx (item, contentProps, setFieldsValue) {
                 showSearch: true,
                 disabled: false,
                 treeDefaultExpandedKeys: ['-1'],
+                treeData: contentProps[item.treeDataKey],
                 onChange:()=>{},
-                ...item
+                ...item.options
             }
             return (
                 <TreeSelect
-                    showSearch={TreeSelectProps.showSearch}
-                    treeDefaultExpandedKeys={TreeSelectProps.treeDefaultExpandedKeys}
-                    placeholder={TreeSelectProps.placeholder}
-                    treeData={contentProps[item.treeDataKey]}
-                    onChange={TreeSelectProps.onChange}
-                    dropdownStyle={TreeSelectProps.dropdownStyle}
-                    disabled={TreeSelectProps.disabled}
+                    {...TreeSelectProps}
                 />
             )
             break;
         case 'textarea':
             let TextAreaProps ={
                 style:{},
+                autosize:{ minRows: 3},
+                onBlur: (e) => {},
                 onChange:()=>{},
-                ...item
+                 ...item.options
             }
             return (
                 <TextArea
-                    placeholder={TextAreaProps.placeholder}
-                    onBlur={(e) => {}}
-                    autosize={{ minRows: 3 }}
-                    onChange={TextAreaProps.onChange}
+                    {...TextAreaProps}
                />
             )
     }
@@ -143,7 +138,6 @@ function getinitialValue (contentProps, item){
             if(typeof contentProps[item.contValue] == 'number'){
                 selectResult = contentProps[item.contValue].toString();
             }
-            console.log('selectResult', selectResult)
             return selectResult
             break;
         default:
@@ -183,6 +177,8 @@ class NewItem extends React.Component<Props, State>  {
         } = form;
         const initModalProps={
             width: 900,
+            title: '',
+            maskClosable: false,
             ...modalProps
 
         }
@@ -202,7 +198,7 @@ class NewItem extends React.Component<Props, State>  {
                                     wrapperCol={{span: 16}}
                                 >
                                     {getFieldDecorator([item.contValue], {
-                                        rules: item.validated,
+                                        rules: item.rules?item.rules: [],
                                         initialValue: getinitialValue(contentProps, item)
                                     })(
                                         getContentJsx(item, contentProps, setFieldsValue)

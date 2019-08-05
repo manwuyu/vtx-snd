@@ -1,7 +1,7 @@
 {
   "name": "vtx-snd",
   "description": "vtx-苏州新区react组件库",
-  "version": "1.0.8-beta.13",
+  "version": "1.0.8-beta.25",
   "main": "./lib/index.js",
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib && node styleProcessor.js",
